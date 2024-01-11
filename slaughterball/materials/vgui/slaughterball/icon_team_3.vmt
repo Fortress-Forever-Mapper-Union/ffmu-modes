@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/slaughterball/icon_team_red"
+	"$translucent" "1"
+}

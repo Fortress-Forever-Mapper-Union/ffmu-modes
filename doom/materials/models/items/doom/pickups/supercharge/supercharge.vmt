@@ -1,0 +1,20 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/items/doom/pickups/supercharge/supercharge"
+	"$translucent" "1"
+
+	"$detail" "models/items/doom/pickups/supercharge/supercharge_detail"
+	"$detailscale" "1"
+	"$detailblendmode" "9"
+
+
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$detailTextureTransform"
+			"texturescrollrate" "0.25"
+			"texturescrollangle" "90"
+		}
+	}
+}

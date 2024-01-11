@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/maps/test_slaughterball/location_elevated"
+	"$alphatest" "1"
+	"$allowalphatocoverage" "1"
+}

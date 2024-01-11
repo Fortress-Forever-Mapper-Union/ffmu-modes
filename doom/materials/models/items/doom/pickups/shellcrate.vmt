@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/items/doom/pickups/shellcrate"
+	"$surfaceprop" "metal"
+	"$model" "1"
+}
