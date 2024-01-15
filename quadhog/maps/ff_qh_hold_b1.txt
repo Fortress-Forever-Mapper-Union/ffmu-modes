@@ -1,0 +1,16 @@
+Modified from : FF_Hold
+Author : A1win
+Editor : -_YoYo178_-
+Thanks to main author (A1win) for making this epic map!
+
+Overview:
+A Experiment named qh_hold which takes the players and gives one of them a strong and highly unstable flag, which vaporizes it's owner if it doesn't get blood within 60 seconds.
+
+Objectives:
+- For the Quad Hunters, kill the Quad Hog.
+- For the Quad Hog, kill the Quad Hunters.
+
+Tips:
+- Quad Hog gains Quad Damage and his health and armor will regenerate while holding the flag.
+- Quad Hog's health regeneration is percentual and varies between 5% and 10% depending on the number of players on the server.
+- The Quad Hog can stay alive until 60 seconds without any kill.
