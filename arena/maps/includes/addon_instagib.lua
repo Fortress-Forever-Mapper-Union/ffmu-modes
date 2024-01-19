@@ -10,7 +10,6 @@
 --== Mode is hosted & developed at:
 -- https://github.com/Fortress-Forever-Mapper-Union/ffmu-modes
 -----------------------------------------------------------------------------
--- IncludeScript( "base_arena" )
 
 BLASTJUMP_MODIFIER = Vector( 1.4, 1.4, 2 )
 -----------------------------------------------------------------------------
@@ -55,11 +54,14 @@ function player_ondamage( player, damageinfo )
 	if not IsPlayer(attacker) then
 		local scale = 0
 		for key, value in ipairs(DAMAGE_TABLE) do
-			if damageinfo:GetDamageType() ~= value then scale = scale
-			elseif damageinfo:GetDamageType() == value then scale = 1
+			if (damageinfo:GetDamageType() ~= value) then scale = scale
+			elseif damageinfo:GetDamageType() == value and ( damageinfo:GetInflictor():GetClassName() ~= "worldspawn" ) then scale = 1
+			-- worldspawn check needs to be done for the sake of regular falldamage not going through
+			-- and if the mapper wants a Damake.kFall type trigger_hurt on the map
 			end
 		end
 		damageinfo:ScaleDamage(scale)
+		damageinfo:SetDamageForce( Vector( 0, 0, 0 ) )
 		return
 	end
 
