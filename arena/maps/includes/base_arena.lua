@@ -2,12 +2,14 @@
 -- base_arena.lua
 -- quake clan arena like mode with customizable doodads
 -----------------------------------------------------------------------------
--- File last modified:
--- 08 / 01 / 2024 ( dd / mm / yyyy ) by gumbuk
--- Contributors:
+--== File last modified:
+-- 18 / 01 / 2024 ( dd / mm / yyyy ) by gumbuk
+--== Contributors:
 -- gumbuk 9
 -- mv
 -- Pon.Id (code descended from ff_lastteamstanding.lua, no other affiliation)
+--== Mode is hosted & developed at:
+-- https://github.com/Fortress-Forever-Mapper-Union/ffmu-modes
 -----------------------------------------------------------------------------
 IncludeScript( "base_teamplay" )
 
@@ -84,6 +86,8 @@ function startup()
 		team:SetClassLimit( Player.kEngineer, -1 )
 		team:SetClassLimit( Player.kCivilian, -1 )
 	end
+	
+	SetGameDescription("Arena")
 end
 
 function player_ondamage( player, damageinfo )
@@ -92,11 +96,14 @@ function player_ondamage( player, damageinfo )
 	if not IsPlayer(attacker) then
 		local scale = 0
 		for key, value in ipairs(DAMAGE_TABLE) do
-			if damageinfo:GetDamageType() ~= value then scale = scale
-			elseif damageinfo:GetDamageType() == value then scale = 1
+			if (damageinfo:GetDamageType() ~= value) then scale = scale
+			elseif damageinfo:GetDamageType() == value and ( damageinfo:GetInflictor():GetClassName() ~= "worldspawn" ) then scale = 1
+			-- worldspawn check needs to be done for the sake of regular falldamage not going through
+			-- and if the mapper wants a Damake.kFall type trigger_hurt on the map
 			end
 		end
 		damageinfo:ScaleDamage(scale)
+		damageinfo:SetDamageForce( Vector( 0, 0, 0 ) )
 		return
 	end
 
