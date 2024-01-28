@@ -32,7 +32,7 @@ BLASTJUMP_MODIFIER = Vector( 1.2, 1.2, 1.4 ) -- multiplier for self knockback
 BLASTJUMP_DAMAGE = 0 -- multiplier for self damage
 
 ENABLE_PICKUPS = false -- enable spawning items mid match
-DELAY_PICKUPS = 20 -- in seconds, time to withhold pickups from spawning
+DELAY_PICKUPS = 70 -- in seconds, time to withhold pickups from spawning
 ENABLE_VAMPIRE = false -- players gain health back on kill
 VAMPIRE_HEALTH = 30 -- points of health to give when vampirism is enabled
 
