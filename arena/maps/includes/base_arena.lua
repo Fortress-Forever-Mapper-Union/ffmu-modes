@@ -3,7 +3,7 @@
 -- quake clan arena like mode with customizable doodads
 -----------------------------------------------------------------------------
 --== File last modified:
--- 18 / 01 / 2024 ( dd / mm / yyyy ) by gumbuk
+-- 28 / 02 / 2024 ( dd / mm / yyyy ) by gumbuk
 --== Contributors:
 -- gumbuk 9
 -- mv
@@ -230,6 +230,17 @@ end
 -----------------------------------------------------------------------------
 -- Entities
 -----------------------------------------------------------------------------
+
+----====---- extra spawnpoints
+agnosticallowedmethod = function(self,player) return player:GetTeamId() ~= Team.kSpectator end
+spectatorallowedmethod = function(self,player) return player:GetTeamId() == Team.kSpectator end
+
+agnosticspawn = { validspawn = agnosticallowedmethod }
+spectatorspawn = { validspawn = spectatorallowedmethod }
+
+agnostic_spawn = agnosticspawn; spectator_spawn = spectatorspawn
+
+-- use the base_teamplay.lua spawns if you for some reason want teamed spawns
 
 ----====---- optional pickups
 optionalbackpack = genericbackpack:new({
